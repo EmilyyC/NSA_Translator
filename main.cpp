@@ -37,10 +37,11 @@ public:
         vector<string> stringgroup;
         while (getline(iss, substring, '\t'))
         {
-            if (count % 4 == 2)
+            if (count  == 8)
                 name = substring;
-            
-            if (count % 4 == 3)
+            if (count == 9)
+                titleName = substring;
+            if (count == 10)
                 addUnit(substring);
             count ++;
         }
@@ -80,13 +81,14 @@ public:
     
     void printOutCourse()
     {
-        //cout << name << endl;
+        //cout << courseLine << endl;
         if (ifTilteCourse())
         {
             cout << departName << " -- " << titleName << " LD (" << unit << ") "<< endl;
         }
         else
             cout << name << " (" << unit << ") " << endl;
+       
     }
 private:
     double unit;
@@ -107,15 +109,8 @@ string seperateTheCollege (string& original)
     return college;
 }
 
-/*string seperateTheCourses (string& original)
-{
-    //for(string::iterator it = original.begin();it !=original.end(); it ++)
-    string courseLine;
-    original.erase (0,original.find("Target Course"));
-    getline(original, courseLine, '/n');
-    
-}
-*/
+
+
 bool isWanted(const std::string & line)
 {
     return (line.find("Target Course") != string::npos);
@@ -127,21 +122,21 @@ int main()
     ifstream myFile("/Users/emilychen/Desktop/DAR.txt");
     vector<Course> listOfCourse (40);
     string line;
-    int count = 1;
+    int count = 0;
     while (getline(myFile, line))
     {
-        if (count % 3 == 1)
-        {   listOfCourse.push_back(listOfCourse[count/3]);
-            listOfCourse[count/3].addCourseLine(line);
+        if (isWanted(line))
+        {
+            listOfCourse.push_back(listOfCourse[count]);
+            listOfCourse[count].addCourseLine(line);
+           
+            count ++;
         }
-        if (count % 3 == 2)
-        listOfCourse[count/3].addName(line);
-        listOfCourse[count/3].seperateCpurseLine();
-        count ++;
         
     }
     for (vector<Course>::iterator it = listOfCourse.begin();it!= listOfCourse.end();it++)
-        it->printOutCourse();
+    {   it -> seperateCpurseLine();
+        it->printOutCourse();}
     
     // print out total unit
     //cout << "total "
