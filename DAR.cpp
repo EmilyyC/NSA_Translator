@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Translate DAR
-//
-//  Created by Emily Chen on 2016-07-15.
-//  Copyright © 2016 Emily C. All rights reserved.
-//
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -17,18 +9,18 @@ using namespace std;
 class Course
 {
 public:
-   /*Course()
-    {
-        courseLine = "";
-    }
-    
-    Course(string courseLine, string name)
-    :courseLine(""), name ("")
-    {
-        this -> courseLine = courseLine;
-        this -> name = name;
-    }
-    */
+    /*Course()
+     {
+     courseLine = "";
+     }
+     
+     Course(string courseLine, string name)
+     :courseLine(""), name ("")
+     {
+     this -> courseLine = courseLine;
+     this -> name = name;
+     }
+     */
     void seperateCpurseLine()
     {
         istringstream iss (courseLine);
@@ -44,7 +36,7 @@ public:
                 addUnit(substring);
             count ++;
         }
-
+        
     }
     void addCourseLine (string courseLine)
     {
@@ -58,7 +50,7 @@ public:
     void addUnit (string strUnit)
     {
         unit = stod(strUnit);
-       
+        
     }
     bool ifTilteCourse()
     {
@@ -114,19 +106,19 @@ string seperateTheCollege (string& original)
 }
 
 /*string seperateTheCourses (string& original)
-{
-    //for(string::iterator it = original.begin();it !=original.end(); it ++)
-    string courseLine;
-    original.erase (0,original.find("Target Course"));
-    getline(original, courseLine, '/n');
-    
-}
-
-bool isWanted(const std::string & line)
-{
-    return (line.find("Target Course") != string::npos);
-}
-*/
+ {
+ //for(string::iterator it = original.begin();it !=original.end(); it ++)
+ string courseLine;
+ original.erase (0,original.find("Target Course"));
+ getline(original, courseLine, '/n');
+ 
+ }
+ 
+ bool isWanted(const std::string & line)
+ {
+ return (line.find("Target Course") != string::npos);
+ }
+ */
 
 int main()
 {
@@ -135,16 +127,20 @@ int main()
     Course sample;
     string line;
     int count = 1;
+    int courseCount = 0;
     while (getline(myFile, line))
     {
         if (count % 3 == 1)
         {   listOfCourse.push_back(sample);
-            listOfCourse[count/3].addCourseLine(line);
+            listOfCourse[courseCount].addCourseLine(line);
         }
-        if (count % 3 == 2)
-        listOfCourse[count/3].addName(line);
-        listOfCourse[count/3].seperateCpurseLine();
+        else if (count % 3 == 2)
+            listOfCourse[courseCount].addName(line);
+        else courseCount ++;
+            
+        listOfCourse[courseCount].seperateCpurseLine();
         count ++;
+        
         
     }
     double totalUnit = 0;
@@ -153,7 +149,7 @@ int main()
         it->printOutCourse();
         totalUnit += it -> showUnit();
     }
-
+    
     
     // print out total unit
     cout << "Total Unit = ";
@@ -163,19 +159,19 @@ int main()
 
 
 /*int main()
-{
-    string original = "";
-    string addOn = "";
-    ifstream myfile;
-    myfile.open("/Users/emilychen/Desktop/DAR.txt");
-    while ( myfile.is_open()&&!myfile.eof())
-    {
-        getline(myfile, addOn);
-        original += addOn;
-        original += "\n";
-    }
-    cout << "<u>"<<seperateTheCollege(original)<< "</u>" <<endl;
-    cout << original<< endl;
-    return 0;
-}
-*/
+ {
+ string original = "";
+ string addOn = "";
+ ifstream myfile;
+ myfile.open("/Users/emilychen/Desktop/DAR.txt");
+ while ( myfile.is_open()&&!myfile.eof())
+ {
+ getline(myfile, addOn);
+ original += addOn;
+ original += "\n";
+ }
+ cout << "<u>"<<seperateTheCollege(original)<< "</u>" <<endl;
+ cout << original<< endl;
+ return 0;
+ }
+ */
