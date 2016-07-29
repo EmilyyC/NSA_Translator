@@ -136,9 +136,11 @@ int main()
         }
         else if (count % 3 == 2)
             listOfCourse[courseCount].addName(line);
-        else courseCount ++;
+        else 
+        {listOfCourse[courseCount].seperateCpurseLine();
+        courseCount ++;}
             
-        listOfCourse[courseCount].seperateCpurseLine();
+        
         count ++;
         
         
