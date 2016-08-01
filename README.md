@@ -12,7 +12,7 @@ For MAC Users
 
 5. create a new cpp file with a header file and copy the DAR translator.h and DAR translator.cpp into them 
 
-6. copy and paste the DAR into dar.txt and change the address in main.cpp
+6. copy and paste the DAR into dar.txt and change the address in all .cpp files
 NOTE: the address is where the file is located in your directory, you'll typically have to update the your name under users
 
 7. Run it
