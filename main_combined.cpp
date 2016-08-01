@@ -263,7 +263,7 @@ int main()
                 ListOfCollege[collegeCount] = it->showName();
                 if (collegeCount != 0)
                 {
-                    cout << "Total "<< ListOfCollege[collegeCount-1]<< " Unit = ";
+                    cout << "Total "<< ListOfCollege[collegeCount-1]<< " Units = ";
                     cout << fixed << setprecision(1) << collegeUnit << endl;
                     cout << endl;
                 }
