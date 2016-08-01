@@ -17,6 +17,8 @@ using namespace std;
 #include <sstream>
 #include <iomanip>
 
+using namespace std;
+
 class Course
 {
 public:
