@@ -172,7 +172,7 @@ bool Course::ifTilteCourse()
 
 void Course::printOutCourse()
 {
-    //IF COLLGE
+    //IF COLLEGE
     if (ifCollege)
     {
         cout << "<u>" << name << "</u>" <<endl;
@@ -277,18 +277,18 @@ int main()
         }
         
         if (ifAnyCourseIP)
-            cout <<"*Courses in progress, instruct student to send in final transcript to Admission office and check DAR in fall."<<endl;
+            cout <<"*Courses in progress, instructed student to send in final transcript to UCLA Admission office and check DAR in Fall."<<endl;
         // print out total unit
         cout << "Total ";
-        cout << ListOfCollege[collegeCount - 1]<< " Unit = ";
+        cout << ListOfCollege[collegeCount - 1]<< " Units = ";
         cout << fixed << setprecision(1) << collegeUnit << endl;
         cout << endl;
         
-        cout << "Total Transfer Unit = ";
+        cout << "Total Transfer Units = ";
         cout << fixed << setprecision(1) << totalUnit << endl;
     }
     ////////////////////////////////////////////////////
-    // TRANSLATE TRANSFER ELVA / BLANK DAR
+    // TRANSLATE TRANSFER EVAL / BLANK DAR
     ////////////////////////////////////////////////////
     else
     {
@@ -315,12 +315,12 @@ int main()
         }
         
         // print out total unit
-        cout << "Total Unit = ";
+        cout << "Total incoming units = ";
         cout << fixed << setprecision(1) << totalUnit << endl;
         return 0;
     }
     
-    // FINISHED TRANLATION --> ADDITIONAL NOTES
+    // FINISHED TRANSLATION --> ADDITIONAL NOTES
     //POP///////////////////////////////////////////////////
     //POP///////////////////////////////////////////////////
     //writePOP();
