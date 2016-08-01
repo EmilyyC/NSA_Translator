@@ -12,7 +12,7 @@ using namespace std;
 bool isInterested( const string interest)
 {
     string popLine;
-    ifstream filePOP("/Users/emilychen/Desktop/POP.txt"); //CHANGE THIS!!
+    ifstream filePOP("/home/ubuntu/workspace/POP.txt"); //CHANGE THIS!!
     while (getline(filePOP, popLine))
         if (popLine.find(interest) != string::npos)
         {   cout <<endl;

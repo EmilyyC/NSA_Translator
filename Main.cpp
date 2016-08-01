@@ -9,41 +9,7 @@
 
 #include "DAR translator.h"
 using namespace std;
-// TRANSFER ELVA
-/*int main()
-{
-    
-    vector<Course> listOfCourse;
-    Course sample;
-    string line;
-    int count = 0;
-    ifstream myFile("/Users/emilychen/Desktop/DAR.txt");
-    while (getline(myFile, line))
-    {
-        if (line.find("Target Course") != string::npos)
-        {
-            listOfCourse.push_back(sample);
-            listOfCourse[count].addCourseLine(line);
-            
-            count ++;
-        }
-        
-    }
-    double totalUnit = 0;
-    for (vector<Course>::iterator it = listOfCourse.begin();it!= listOfCourse.end();it++)
-    {
-        it -> seperateCourseLineTransferEvl();
-        it->printOutCourse();
-        totalUnit += it -> showUnit();
-    }
-    
-    // print out total unit
-    cout << "Total Unit = ";
-    cout << fixed << setprecision(1) << totalUnit << endl;
-    return 0;
-}
-*/
-// DAR
+
 int main()
 {
     string ListOfCollege [10];
@@ -56,7 +22,7 @@ int main()
     string line;
     int count = 1;
     int courseCount = 0;
-    ifstream myFile("/Users/emilychen/Desktop/DAR.txt"); //CHANGE THIS!!
+    ifstream myFile("/home/ubuntu/workspace/DAR.txt"); //CHANGE THIS!!
     while (getline(myFile, line))
     {
         if (count % 3 == 1)
@@ -101,7 +67,7 @@ int main()
     }
     
     if (ifAnyCourseIP)
-    cout <<"*Courses in progress, instruct student to send in final transcript to Admission office and check DAR in fall."<<endl;
+    cout <<"*Courses still in progress, instructed student to send in final transcript to UCLA Admission office and check DAR in Fall."<<endl;
     // print out total unit
     cout << "Total "<<ListOfCollege[collegeCount]<< " Unit = ";
     cout << fixed << setprecision(1) << collegeUnit << endl;
