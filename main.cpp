@@ -8,13 +8,13 @@
 
 
 #include "DAR_translator.h"
+//#include "DAR_translator.cpp"
 using namespace std;
 
 int main()
 {
     string ListOfCollege [10];
     ListOfCollege[0] = "hi";
-    
     bool ifAnyCourseIP= false;
  
     vector<Course> listOfCourse;
@@ -23,6 +23,7 @@ int main()
     int count = 1;
     int courseCount = 0;
     ifstream myFile("/home/ubuntu/workspace/DAR.txt"); //CHANGE THIS!!
+    
     while (getline(myFile, line))
     {
         if (count % 3 == 1)
