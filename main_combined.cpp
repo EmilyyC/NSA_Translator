@@ -8,6 +8,7 @@
 
 
 
+using namespace std;
 
 #include <iostream>
 #include <string>
@@ -16,11 +17,9 @@
 #include <sstream>
 #include <iomanip>
 
-using namespace std;
 class Course
 {
 public:
-    Course ();
     void seperateCourseLineTransferEvl();
     bool isWanted(const std::string & line, std::string target);
     void addCourseLine (std::string courseLine);
@@ -36,8 +35,8 @@ public:
     std::string showName ();
 private:
     double unit;
-    bool ifCollege;
-    bool ifInProgress;
+    bool ifCollege = false;
+    bool ifInProgress = false;
     std::string name;
     //bool ifTitleCourse;
     std::string courseLine;
@@ -45,11 +44,6 @@ private:
     std::string departName;
 };
 
-Course::Course()
-{
-    ifCollege = false;
-    ifInProgress = false;
-}
 
 bool isInterested( const string interest)
 {
@@ -216,15 +210,11 @@ std::string Course::seperateTheCollege (std::string& original)
 
 int main()
 {
-    string ListOfCollege [10];
-    bool ifAnyCourseIP= false;
     vector<Course> listOfCourse;
     Course sample;
-    string line;
-    int count = 1;
-    int courseCount = 0;
-    ifstream myFile("/Users/emilychen/Desktop/DAR.txt");
     string type;
+    string line;
+    ifstream myFile("/Users/emilychen/Desktop/DAR.txt");
     // READ INPUT
     //////////////////////////////////////
     do {
@@ -236,6 +226,13 @@ int main()
     /////////////////////////////////////////////////////////
     if (type == "D")
     {
+        string ListOfCollege [10];
+        bool ifAnyCourseIP= false;
+        
+        int count = 1;
+        int courseCount = 0;
+       
+        
         while (getline(myFile, line))
         {
             if (count % 3 == 1)
@@ -295,6 +292,9 @@ int main()
     ////////////////////////////////////////////////////
     else
     {
+       
+        int count = 0;
+
         while (getline(myFile, line))
         {
             if (line.find("Target Course") != string::npos)
@@ -326,4 +326,5 @@ int main()
     //writePOP();
     return 0;
 }
+
 
