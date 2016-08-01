@@ -6,7 +6,8 @@
 //  Copyright © 2016 Emily C. All rights reserved.
 //
 
-#include "DAR translator.h"
+#include "DAR_translator.h"
+#include <iostream>
 using namespace std;
 
 bool isInterested( const string interest)

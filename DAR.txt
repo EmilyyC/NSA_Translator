@@ -1,1 +1,95 @@
-paste your dar or transfer eval here
+
+ Source Id	Grp	Lock	Certify	Last Modified	Type	Term	Course	Title	R Credit	Grade	Credit	Seq
+	University of California, Davis
+4834	002			06/11/2016 8:07 PM	Source Course (school you transferred from)	2014 FALL	ECS 030	PROGRAMMING&PROB SOLVING	4.00	A+	4.00	001
+ 	 	 	 	 	Source Course (school you transferred from)	2015 WINTER	ECS 040	SOFTWARE &OBJECT ORIENT PRG	4.00	A	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 WINTER	COM SCI31	PROGRAMMING&PROB SOLVING ++	4.00	MG	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 WINTER	COM SCIT02	Intro. to Prgmng	4.00	MG	4.00	001
+ 	 	 
+4834	003			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 SUMMER	ECS 050	MACHINE DEPENDENT PROG	4.00	A+	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 SUMMER	COM SCI33	MACHINE DEPENDENT PROG	4.00	TA+	4.00	001
+ 	 	 
+4834	004			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 FALL	CHN 101	Chinese film	4.00	B	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 FALL	CHIN T03	Chinese Film	4.00	TB	4.00	001
+ 	 	 
+4834	005			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 FALL	COM 004	major books of contemporary w	4.00	A	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 FALL	COM LITT04	Mjr Books of the Cont. Wld.	4.00	TA	4.00	001
+ 	 	 
+4834	006			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 WINTER	ECN 001A	PRINC OF MICROECON	4.00	A+	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 WINTER	ECON 1	PRINC OF MICROECON	4.00	TA+	4.00	001
+ 	 	 
+4834	007			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 SPRING	ECN 001B	PRINC Of MACROECON	4.00	A+	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 SPRING	ECON 2	PRINC Of MACROECON	4.00	TA+	4.00	001
+ 	 	 
+4834	008			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 WINTER	ECS 020	DISCRETE MATH FOR CS	4.00	A	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 WINTER	MATH 61	Discrete Math for Comp. Sci.	4.00	TA	4.00	001
+ 	 	 
+4834	009			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 SPRING	ECS 060	DATA STRUCTURES AND PROG	4.00	A	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 SPRING	COM SCIT05	Data Structures & Prgmng	4.00	TA	4.00	001
+ 	 	 
+4834	010			06/11/2016 8:07 PM	Source Course (school you transferred from)	2016 SPRING	ENG 017	Circuits I	4.00	IP	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	EL ENGRT06	Circuits I	4.00	TIP	4.00	001
+ 	 	 
+4834	011			06/11/2016 8:07 PM	Source Course (school you transferred from)	2014 FALL	FST 001	INTRO TO FILM STUDIES	4.00	B-	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2014 FALL	NONDEPTT07	Princp of Food Sci	4.00	TB-	4.00	001
+ 	 	 
+4834	012			06/11/2016 8:07 PM	Source Course (school you transferred from)	2014 FALL	MAT 021B	CALCULUS	4.00	A	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2014 FALL	MATH 31B	CALCULUS	4.00	TA	4.00	001
+ 	 	 
+4834	013			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 WINTER	MAT 021C	CALCULUS	4.00	A	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 WINTER	MATH 32A	CALCULUS	4.00	TA	4.00	001
+ 	 	 
+4834	014			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 SPRING	MAT 021D	CALCULUS	4.00	A	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 SPRING	MATH 32B	CALCULUS	4.00	TA	4.00	001
+ 	 	 
+4834	015			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 SUMMER	MAT 022A	LINEAR ALGEBRA	3.00	A	3.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 SUMMER	MATH 33A	LINEAR ALGEBRA	3.00	TA	3.00	001
+ 	 	 
+4834	016			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 SUMMER	MAT 022AL	LINEAR ALGEBRA COMP LAB	1.00	P	1.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 SUMMER	MATH T08	Linear Alg Lab	1.00	TP	1.00	001
+ 	 	 
+4834	017			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 FALL	MAT 022B	differential equations	3.00	A-	3.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 FALL	MATH 33B	differential equations	3.00	TA-	3.00	001
+ 	 	 
+4834	018			06/11/2016 8:07 PM	Source Course (school you transferred from)	2016 SPRING	MAT 168	OPTIMIZATION	4.00	IP	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	MATH T09	Optimization	4.00	TIP	4.00	001
+ 	 	 
+4834	019			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 SPRING	PHY 009A	CLASSICAL PHYSICS	4.00	A+	4.00	001
+ 	 	 	 	 	Source Course (school you transferred from)	2015 FALL	PHY 009B	CLASSICAL PHYSICS	5.00	A+	5.00	001
+ 	 	 	 	 	Source Course (school you transferred from)	2016 WINTER	PHY 009C	CLASSICAL PHYSICS	5.00	IP	5.00	001
+ 	 	 	 	 	Source Course (school you transferred from)	2016 SPRING	PHY 009D	Modern Physics	4.00	IP	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICS1A	Classical Phys	5.00	MG	5.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICS1B	Classical Phys	5.00	MG	5.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICS1C	Classical Phys	5.00	MG	5.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICS4AL	Classical Phys	3.00	MG	3.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICS4BL	Classical Phys	0.00	MG	0.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICST10	Excess Phys Title Credit	0.00	MG	0.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICST11	Excess Phys Title Credit	0.00	MG	0.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICST12	Excess Phys Title Credit	0.00	MG	0.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	PHYSICST13	Excess Phys Title Credit	0.00	MG	0.00	001
+ 	 	 
+4834	020			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 WINTER	UWP 023	ADVANCED ESL WRITING	4.00	P	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 WINTER	ESL T14	Adv ESL Writing	4.00	TP	4.00	001
+ 	 	 
+4834	021			06/11/2016 8:07 PM	Source Course (school you transferred from)	2015 FALL	ENG CS 171	Machine Learning	4.00	A+	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2015 FALL	UNKNOWN UD	Upper Div	0.00	NTR	0.00	001
+ 	 	 
+4834	022			06/11/2016 8:07 PM	Source Course (school you transferred from)	2016 WINTER	ENG CS 122A	Algorithms Design	4.00	IP	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 WINTER	UNKNOWN UD	Upper Div	0.00	NTR	0.00	001
+ 	 	 
+4834	023			06/11/2016 8:07 PM	Source Course (school you transferred from)	2016 WINTER	ENG CS 132	Prob & Sta Model for CS	4.00	IP	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 WINTER	UNKNOWN UD	Upper Div	0.00	NTR	0.00	002
+ 	 	 
+4834	024			06/11/2016 8:07 PM	Source Course (school you transferred from)	2016 WINTER	ENG CS 170	Artificial Intelligence	4.00	IP	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 WINTER	UNKNOWN UD	Upper Div	0.00	NTR	0.00	003
+ 	 	 
+4834	025			06/11/2016 8:07 PM	Source Course (school you transferred from)	2016 SPRING	ENG CS 122B	Algorithms Design	4.00	IP	4.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2016 SPRING	UNKNOWN UD	Upper Div	0.00	NTR	0.00	001
+ 	 	 
+4834	026			06/11/2016 8:07 PM	Source Course (school you transferred from)	2014 FALL	CHEM 002A	GENERAL CHEM	5.00	A-	5.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2014 FALL	UNKNOWN	GENERAL CHEM	0.00	NTR	0.00	001
+ 	 	 
+	Advanced Placement Test Scores
+999081	001			06/11/2016 8:07 PM	Source Course (school you transferred from)	2013 SPRING	665	AP Math Calc AB	0.00		0.00	001
+ 	 	 	 	 	Target Course (school you transferred to)	2013 SPRING	MATH T01	Calc AB	4.00	AP	4.00	001
+ 	 	 
