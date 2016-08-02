@@ -20,6 +20,7 @@ using namespace std;
 class Course
 {
 public:
+    Course ();
     void seperateCourseLineTransferEvl();
     bool isWanted(const std::string & line, std::string target);
     void addCourseLine (std::string courseLine);
@@ -35,10 +36,9 @@ public:
     std::string showName ();
 private:
     double unit;
-    bool ifCollege = false;
-    bool ifInProgress = false;
+    bool ifCollege;
+    bool ifInProgress;
     std::string name;
-    //bool ifTitleCourse;
     std::string courseLine;
     std::string titleName;
     std::string departName;
@@ -87,6 +87,11 @@ void writePOP ()
     
 }
 
+Course::Course()
+{
+   ifCollege = false;
+    ifInProgress = false;
+}
 
 
 bool Course::isWanted(const std::string & line, string target)
@@ -214,7 +219,7 @@ int main()
     Course sample;
     string type;
     string line;
-    ifstream myFile("/Users/emilychen/Desktop/DAR.txt"); //CHANGE THIS!!!
+    ifstream myFile("/Users/emilychen/Desktop/DAR.txt");
     // READ INPUT
     //////////////////////////////////////
     do {
@@ -222,6 +227,9 @@ int main()
         cin >> type;
     }
     while (type != "D" && type != "T");
+    
+    cout << "\n\nDegree Audit Report (DAR) with transfer work posted Session 204\n" << endl;
+    ////////////////////////////////////////////////////////
     // TRANSLATE DAR////////////////////////////////////////
     /////////////////////////////////////////////////////////
     if (type == "D")
@@ -231,7 +239,7 @@ int main()
         
         int count = 1;
         int courseCount = 0;
-       
+        
         
         while (getline(myFile, line))
         {
@@ -255,15 +263,15 @@ int main()
         int collegeCount = 0;
         for (vector<Course>::iterator it = listOfCourse.begin();it!= listOfCourse.end();it++)
             
-        {   if (it->showIfIP())
-            ifAnyCourseIP = true;
+        {
+            
             it -> seperateCourseLine();
             if (it->showIfCollege())
             {
                 ListOfCollege[collegeCount] = it->showName();
                 if (collegeCount != 0)
                 {
-                    cout << "Total "<< ListOfCollege[collegeCount-1]<< " Units = ";
+                    cout << "Total "<< ListOfCollege[collegeCount-1]<< " Unit = ";
                     cout << fixed << setprecision(1) << collegeUnit << endl;
                     cout << endl;
                 }
@@ -273,28 +281,32 @@ int main()
             it->printOutCourse();
             totalUnit += it -> showUnit();
             collegeUnit += it ->showUnit();
+            if (it->showIfIP())
+                ifAnyCourseIP = true;
             
         }
         
-        if (ifAnyCourseIP)
-            cout <<"*Courses in progress, instructed student to send in final transcript to UCLA Admission office and check DAR in Fall."<<endl;
+       
         // print out total unit
         cout << "Total ";
-        cout << ListOfCollege[collegeCount - 1]<< " Units = ";
+        cout << ListOfCollege[collegeCount - 1]<< " Unit = ";
         cout << fixed << setprecision(1) << collegeUnit << endl;
         cout << endl;
         
-        cout << "Total Transfer Units = ";
+        cout << "Total Transfer Unit = ";
         cout << fixed << setprecision(1) << totalUnit << endl;
+        
+        if (ifAnyCourseIP)
+            cout <<"\n*Courses in progress, instruct student to send in final transcript to Admission office and check DAR in fall."<<endl;
     }
     ////////////////////////////////////////////////////
-    // TRANSLATE TRANSFER EVAL / BLANK DAR
+    // TRANSLATE TRANSFER ELVA / BLANK DAR
     ////////////////////////////////////////////////////
     else
     {
-       
+        
         int count = 0;
-
+        
         while (getline(myFile, line))
         {
             if (line.find("Target Course") != string::npos)
@@ -315,16 +327,14 @@ int main()
         }
         
         // print out total unit
-        cout << "Total incoming units = ";
+        cout << "Total Unit = ";
         cout << fixed << setprecision(1) << totalUnit << endl;
-        return 0;
     }
     
-    // FINISHED TRANSLATION --> ADDITIONAL NOTES
+    // FINISHED TRANLATION --> ADDITIONAL NOTES
     //POP///////////////////////////////////////////////////
     //POP///////////////////////////////////////////////////
     //writePOP();
     return 0;
 }
-
 
