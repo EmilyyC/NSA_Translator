@@ -17,6 +17,11 @@
 
 using namespace std;
 
+
+// UPDATE THESE
+
+int SESSION = 206;
+
 class Course
 {
 public:
@@ -32,18 +37,39 @@ public:
     std::string seperateTheCollege (std::string& original);
     void seperateCourseLine();
     bool showIfIP();
+    void setUnit(int newUnit);
     bool showIfCollege();
     std::string showName ();
+    bool operator==(const Course& other);
 private:
-    double unit;
-    bool ifCollege;
-    bool ifInProgress;
-    std::string name;
-    std::string courseLine;
-    std::string titleName;
-    std::string departName;
+    double m_unit;
+    bool m_ifCollege;
+    bool m_ifInProgress;
+    std::string m_name;
+    std::string m_courseLine;
+    std::string m_titleName;
+    std::string m_departName;
+    std::string m_grade;
 };
 
+
+
+void writeAdditionalNotesTransfer ()
+{
+    cout << endl;
+    cout << "Additional Notes: \n"<<endl;
+    cout << "Referred student to Sociology department website http://www.sociology.ucla.edu\n"<< endl;
+    cout << "Recommended Sociology 20, one major upper division course and one non major upper division."<<endl;
+    cout << "Recommended student to take three classes in the fall.\n\nAlso recommended student not to take classes with finals on the same day.\n"<< endl;
+}
+void writeAdditionalNotesFY ()
+{
+    cout << endl;
+    cout << "Additional Notes: \n"<<endl;
+    cout << "Student met with Mary Anne Geber and was recommended to take Math 32A, Physics 1A and GE\n"<<endl;
+    cout << "Referred to Engineering website http://www.seasoasa.ucla.edu.\n\nRecommended student to take three classes in the fall with a fiat lux or/and seminar as the only optional fourth/fifth class.\n\nAlso recommended student not to take classes with finals on the same day\n" << endl;
+    cout << "Student expressed interest in STEM club, referred to Association for Computing Machinery (ACM) and Institute of Electrical and Electronics Engineers (IEEE) http://acm.cs.ucla.edu and http://www.ieee.ucla.edu\n" <<endl;
+}
 
 bool isInterested( const string interest)
 {
@@ -58,10 +84,7 @@ bool isInterested( const string interest)
 
 void writePOP ()
 {
-    cout << endl;
-    cout << "Additional Notes: \n"<<endl;
-    cout << "Referred student to Sociology department website http://www.sociology.ucla.edu\n"<< endl;
-    cout << "Recommended Sociology 20, one major upper division course and one non major upper division."<<endl;
+    
     if (isInterested("career plans"))
         cout << "Students interested in career plans and professional/graduate school, referred to Career Centre http://www.career.ucla.edu"<< endl;
     if (isInterested("community service opportunities"))
@@ -81,55 +104,65 @@ void writePOP ()
     if (isInterested( "sport"))
         cout << "Student interested in sports, referred to Recreation Centre http://www.recreation.ucla.edu"<< endl;
     
-    cout << endl;
-    cout << "Recommended student to take three classes in the fall.\n\nAlso recommended student not to take classes with finals on the same day.\n"<< endl;
     
     
+    
+}
+bool Course::operator==(const Course& other)
+{
+    
+    
+    if (m_titleName!= "" && m_titleName == other.m_titleName && m_departName == other.m_departName)
+        return true;
+    return false;
 }
 
 Course::Course()
 {
-   ifCollege = false;
-    ifInProgress = false;
+    m_ifCollege = false;
+    m_ifInProgress = false;
 }
 
-
+void Course::setUnit(int newUnit)
+{
+    m_unit = newUnit;
+}
 bool Course::isWanted(const std::string & line, string target)
 {
     return (line.find(target) != string::npos);
 }
 
-double Course::showUnit (){return unit;}
-bool Course::showIfCollege() {return ifCollege;}
-bool Course::showIfIP()    {return ifInProgress;}
-string Course::showName () {return name;}
+double Course::showUnit (){return m_unit;}
+bool Course::showIfCollege() {return m_ifCollege;}
+bool Course::showIfIP()    {return m_ifInProgress;}
+string Course::showName () {return m_name;}
 void Course::addCourseLine (std::string courseLine)
 {
-    this -> courseLine = courseLine;
+    this -> m_courseLine = courseLine;
 }
 
 void Course::addName (std::string name)
 {
-    this -> titleName = name;
+    this -> m_titleName = name;
 }
 void Course::addUnit (std::string strUnit)
 {
-    unit = stod(strUnit);
+    m_unit = stod(strUnit);
 }
 
 
 void Course::seperateCourseLineTransferEvl()
 {
-    istringstream iss (courseLine);
+    istringstream iss (m_courseLine);
     string substring;
     int count=1;
     vector<string> stringgroup;
     while (getline(iss, substring, '\t'))
     {
         if (count  == 8)
-            name = substring;
+            m_name = substring;
         if (count == 9)
-            titleName = substring;
+            m_titleName = substring;
         if (count == 10)
             addUnit(substring);
         count ++;
@@ -138,18 +171,27 @@ void Course::seperateCourseLineTransferEvl()
 }
 void Course::seperateCourseLine()
 {
-    std::istringstream iss (courseLine);
+    std::istringstream iss (m_courseLine);
     std::string substring;
     int count=1;
     std::vector<std::string> stringgroup;
-    if (isWanted(courseLine, "Sub-Requirement Complete" ))
+    if (isWanted(m_courseLine, "Sub-Requirement Complete" ))
     {
-        ifCollege = true;
+        m_ifCollege = true;
     }
     while (getline(iss, substring, '\t'))
     {
         if (count % 4 == 2)
-            name = substring;
+        {
+            
+            if (substring == "Advanced Placement Test Scores")
+            {
+                substring = "Advanced Placement";
+            }
+            
+            m_name = substring;
+        }
+        
         
         if (count % 4 == 3)
             addUnit(substring);
@@ -159,28 +201,28 @@ void Course::seperateCourseLine()
 
 bool Course::ifTilteCourse()
 {
-    for (int i =0; i< name.size(); i++)
+    for (int i =0; i< m_name.size(); i++)
     {
-        if (isdigit(name[i]))
+        if (isdigit(m_name[i]))
         {
-            if (name[i-1]=='T')
+            if (m_name[i-1]=='T')
             {
                 for (int k = 0; k< i-2; k++ )
-                    departName += name[k];
+                    m_departName += m_name[k];
                 return true;
             }
         }
     }
-    departName = "";
+    m_departName = "";
     return false;
 }
 
 void Course::printOutCourse()
 {
-    //IF COLLEGE
-    if (ifCollege)
+    //IF COLLGE
+    if (m_ifCollege)
     {
-        cout << "<u>" << name << "</u>" <<endl;
+        cout << "<u>" << m_name << "</u>" <<endl;
         return;
     }
     
@@ -188,17 +230,18 @@ void Course::printOutCourse()
     //cout << name << endl;
     if (ifTilteCourse())
     {
-        std::cout << departName << " -- " << titleName << " LD (";
-        std::cout << std::fixed << std::setprecision(1) << unit << ") ";
+        std::cout << m_departName << " - " << m_titleName << " LD (";
+        std::cout << std::fixed << std::setprecision(1) << m_unit << ") ";
         
     }
     else
-    {   std::cout << name << " (";
-        std::cout << std::fixed << std::setprecision(1) << unit << ") ";
+    {   std::cout << m_name << " (";
+        std::cout << std::fixed << std::setprecision(1) << m_unit << ") ";
     }
-    if (unit==0)
-    {   std::cout << "-- IP * " << std::endl;
-        ifInProgress = true;
+    if (m_unit==0)
+    {
+        std::cout << "- IP * " << std::endl;
+        m_ifInProgress = true;
     }
     else cout << endl;
 }
@@ -219,7 +262,7 @@ int main()
     Course sample;
     string type;
     string line;
-    ifstream myFile("/Users/emilychen/Desktop/DAR.txt"); // CHANGE THIS
+    ifstream myFile("/Users/emilychen/Desktop/DAR.txt");
     // READ INPUT
     //////////////////////////////////////
     do {
@@ -228,9 +271,9 @@ int main()
     }
     while (type != "D" && type != "T");
     
-    cout << "\n\nDegree Audit Report (DAR) with transfer work posted Session 204\n" << endl;
+    cout << "\n\nDegree Audit Report (DAR) with transfer work posted Session "<< SESSION <<"\n" << endl;
     ////////////////////////////////////////////////////////
-    // TRANSLATE DAR////////////////////////////////////////
+    //DAR////////////////////////////////////////
     /////////////////////////////////////////////////////////
     if (type == "D")
     {
@@ -246,13 +289,19 @@ int main()
             if (count % 3 == 1)
             {   listOfCourse.push_back(sample);
                 listOfCourse[courseCount].addCourseLine(line);
+                listOfCourse[courseCount].seperateCourseLine();
             }
             else if (count % 3 == 2)
                 listOfCourse[courseCount].addName(line);
             else
             {
-                listOfCourse[courseCount].seperateCourseLine();
-                courseCount ++;
+                if (courseCount > 1 && (listOfCourse[courseCount] == listOfCourse[courseCount-1]))
+                {
+                    listOfCourse[courseCount-1].setUnit(8.0);
+                    
+                }
+                else
+                    courseCount ++;
             }
             count ++;
             
@@ -261,39 +310,38 @@ int main()
         double totalUnit = 0;
         double collegeUnit = 0;
         int collegeCount = 0;
-        for (vector<Course>::iterator it = listOfCourse.begin();it!= listOfCourse.end();it++)
+        //for (vector<Course>::iterator it = listOfCourse.begin();it!= listOfCourse[courseCount];it++)
+        for (int k=0; k<courseCount; k++)
             
         {
-            
-            it -> seperateCourseLine();
-            if (it->showIfCollege())
+            if (listOfCourse[k].showIfCollege())
             {
-                ListOfCollege[collegeCount] = it->showName();
+                ListOfCollege[collegeCount] = listOfCourse[k].showName();
                 if (collegeCount != 0)
                 {
-                    cout << "Total "<< ListOfCollege[collegeCount-1]<< " Unit = ";
+                    cout << "\nTotal "<< ListOfCollege[collegeCount-1]<< " Units = ";
                     cout << fixed << setprecision(1) << collegeUnit << endl;
                     cout << endl;
                 }
                 collegeCount ++;
                 collegeUnit = 0;
             }
-            it->printOutCourse();
-            totalUnit += it -> showUnit();
-            collegeUnit += it ->showUnit();
-            if (it->showIfIP())
+            listOfCourse[k].printOutCourse();
+            totalUnit += listOfCourse[k].showUnit();
+            collegeUnit += listOfCourse[k].showUnit();
+            if (listOfCourse[k].showIfIP())
                 ifAnyCourseIP = true;
             
         }
         
-       
+        
         // print out total unit
-        cout << "Total ";
-        cout << ListOfCollege[collegeCount - 1]<< " Unit = ";
+        cout << "\nTotal ";
+        cout << ListOfCollege[collegeCount - 1]<< " Units = ";
         cout << fixed << setprecision(1) << collegeUnit << endl;
         cout << endl;
         
-        cout << "Total Transfer Unit = ";
+        cout << "Total Transfer Units = ";
         cout << fixed << setprecision(1) << totalUnit << endl;
         
         if (ifAnyCourseIP)
@@ -334,7 +382,11 @@ int main()
     // FINISHED TRANLATION --> ADDITIONAL NOTES
     //POP///////////////////////////////////////////////////
     //POP///////////////////////////////////////////////////
+    //writeAdditionalNotesFY();
     //writePOP();
+    
     return 0;
 }
+
+
 
