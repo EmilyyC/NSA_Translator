@@ -20,7 +20,7 @@ using namespace std;
 
 // UPDATE THESE
 
-int SESSION = 206;
+int SESSION = 205;
 
 class Course
 {
