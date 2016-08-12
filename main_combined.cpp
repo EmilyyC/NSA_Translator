@@ -111,6 +111,10 @@ void writePOP ()
 bool Course::operator==(const Course& other)
 {
     
+    if (!ifTilteCourse())
+    {
+        return false;
+    }
     
     if (m_titleName!= "" && m_titleName == other.m_titleName && m_departName == other.m_departName)
         return true;
